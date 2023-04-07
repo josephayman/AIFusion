@@ -25,7 +25,7 @@ export default function Hero() {
               <span className="sr-only">AI Fusion</span>
               <img
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                src="/AIFusion.svg"
                 alt=""
               />
             </a>
@@ -66,7 +66,7 @@ export default function Hero() {
                 <span className="sr-only">Your Company</span>
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                  src="/AIFusion.svg"
                   alt=""
                 />
               </a>
@@ -118,9 +118,7 @@ export default function Hero() {
                 AI Fusion
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat aliqua.
+                Search the biggest collection of AI models and datasets.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Search />
