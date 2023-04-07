@@ -1,13 +1,13 @@
 export default function Example() {
   return (
-    <div>
+    <div className="w-full">
       <label
         htmlFor="search"
         className="block text-sm font-medium leading-6 text-gray-900"
       >
         Quick search
       </label>
-      <div className="relative mt-2 flex items-center">
+      <div className="relative mt-2 flex w-full items-center">
         <input
           type="text"
           name="search"
