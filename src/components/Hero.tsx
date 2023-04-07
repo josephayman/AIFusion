@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 import Search from "./Search";
 
 const navigation = [
@@ -23,10 +24,12 @@ export default function Hero() {
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">AI Fusion</span>
-              <img
+              <Image
                 className="h-8 w-auto"
+                width={100}
+                height={100}
                 src="/AIFusion.svg"
-                alt=""
+                alt="AIFusion"
               />
             </a>
           </div>
@@ -64,10 +67,12 @@ export default function Hero() {
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
-                <img
+                <Image
                   className="h-8 w-auto"
+                  width={100}
+                  height={100}
                   src="/AIFusion.svg"
-                  alt=""
+                  alt="AIFusion"
                 />
               </a>
               <button
@@ -111,7 +116,7 @@ export default function Hero() {
             }}
           />
         </div>
-        <div className="pt-24 sm:py-32">
+        <div className="py-16 sm:pb-16 sm:pt-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
