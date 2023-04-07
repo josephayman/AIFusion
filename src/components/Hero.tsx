@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Search from "./Search";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -110,7 +111,7 @@ export default function Hero() {
             }}
           />
         </div>
-        <div className="py-24 sm:py-32 lg:pb-40">
+        <div className="pt-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -122,12 +123,7 @@ export default function Hero() {
                 fugiat aliqua.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
-                  href="#"
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Get started
-                </a>
+                <Search />
               </div>
             </div>
           </div>
