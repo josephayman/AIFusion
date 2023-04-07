@@ -1,10 +1,11 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import Hero from "~/components/Hero";
 
 import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const {data} = api.posts.getAll.useQuery();
 
   return (
     <>
@@ -13,9 +14,16 @@ const Home: NextPage = () => {
         <meta name="description" content="AI Fusion" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-        <h1 className="text-4xl font-bold text-white">AI Fusion</h1>
-        <p className="text-2xl text-white">{hello.data?.greeting}</p>
+      <main>
+        <Hero />
+        <div>
+          {data?.map((post) => (
+            <div key={post.id}>
+              <h2>{post.title}</h2>
+              <p>{post.title}</p>
+            </div>
+          ))}
+        </div>
       </main>
     </>
   );
