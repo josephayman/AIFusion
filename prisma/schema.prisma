@@ -2,19 +2,22 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
+
 datasource db {
-  provider = "mysql"
-  url = env("DATABASE_URL")
-  relationMode = "prisma"
+    provider     = "mysql"
+    url          = env("DATABASE_URL")
+    relationMode = "prisma"
 }
 
 model Post {
-    id        String   @id @default(cuid())
-    title     String
-    provider  String
+    id          String   @id @default(cuid())
+    title       String
+    description String
+    category    String
+    provider    String
+    image       String?  @db.VarChar(1000)
+    createdAt   DateTime @default(now())
     @@index([provider])
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
 }
