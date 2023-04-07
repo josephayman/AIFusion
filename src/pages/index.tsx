@@ -3,8 +3,6 @@ import Head from "next/head";
 import Grid from "~/components/Grid";
 import Hero from "~/components/Hero";
 
-import { api } from "~/utils/api";
-
 const Home: NextPage = () => {
   return (
     <>
@@ -15,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Hero />
-        <div className="w-full px-24 py-12">
+        <div className="m-auto w-full px-6 py-12 md:px-24">
           <Grid />
         </div>
       </main>
