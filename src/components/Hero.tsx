@@ -1,11 +1,9 @@
-import Nav from "./Nav";
 import Search from "./Search";
 
 export default function Hero() {
 
   return (
     <div className="bg-white">
-      <Nav />
       <div className="relative isolate pt-14">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -22,7 +20,7 @@ export default function Hero() {
         <div className="py-16 sm:pb-16 sm:pt-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              <h1>
                 AI Fusion
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
