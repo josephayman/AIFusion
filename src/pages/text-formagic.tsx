@@ -1,4 +1,5 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import MarkdownViewer from "~/components/MarkdownViewer";
 
 export default function TextFormagic() {
