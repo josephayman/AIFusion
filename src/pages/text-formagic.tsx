@@ -62,24 +62,29 @@ export function NoteInput({ onContentChange }: NoteInputProps) {
     setValue(e.target.value);
   };
 
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const response = await fetch("/api/format-text", {
+    fetch("/api/format-text", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ text: value }),
-    });
-    const data = await response.json();
-    console.log("data", data);
-    console.log("data.result", data.result);
-  
-    let rawResult = data.result;
-  
-    console.log("rawResult");
-    onContentChange(rawResult);
-    console.log(value);
+    })
+      .then((response) => response.json() as Promise<ApiResponse>)
+      .then((data) => {
+        console.log("data", data);
+        console.log("data.result", data.result);
+
+        const rawResult = data.result;
+
+        console.log("rawResult");
+        onContentChange(rawResult);
+        console.log(value);
+      })
+      .catch((error) => {
+        console.error("Error fetching formatted text:", error);
+      });
   }
 
   return (
@@ -108,4 +113,8 @@ export function NoteInput({ onContentChange }: NoteInputProps) {
       </div>
     </form>
   );
+}
+
+interface ApiResponse {
+  result: string;
 }

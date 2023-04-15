@@ -1,4 +1,4 @@
-import { Configuration, OpenAIApi} from "openai";
+import { Configuration, OpenAIApi } from "openai";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const configuration = new Configuration({
@@ -6,10 +6,15 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
+interface FormatTextRequestBody {
+  text: string;
+}
+
 export default async function getText(req: NextApiRequest, res: NextApiResponse) {
+  const body = req.body as FormatTextRequestBody;
   const completion = await openai.createCompletion({
     model: "text-davinci-003",
-    prompt: textPrompt(req.body.text),
+    prompt: textPrompt(body.text),
     max_tokens: 2000,
     temperature: 0.6,
   });
