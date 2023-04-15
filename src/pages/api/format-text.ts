@@ -1,4 +1,4 @@
-import { Configuration, OpenAIApi } from "openai";
+import { Configuration, OpenAIApi} from "openai";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const configuration = new Configuration({
@@ -6,14 +6,14 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+export default async function getText(req: NextApiRequest, res: NextApiResponse) {
   const completion = await openai.createCompletion({
     model: "text-davinci-003",
-    prompt: textPrompt(req.body.product),
+    prompt: textPrompt(req.body.text),
     max_tokens: 2000,
     temperature: 0.6,
   });
-  res.status(200).json({ result: completion.data.choices[0].text });
+  res.status(200).json({ result: completion.data.choices[0].text || "" });
 }
 
 function textPrompt(plainText: string) {
